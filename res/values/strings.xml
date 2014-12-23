@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PizzaClient</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_login_label">Belépés</string>
+    <string name="button_service_label">Go to the web service page</string>
+    <string name="browser_label">Web Browser</string>
+    <string name="service_label">Web Service</string>
+    <string name="hu_welcome_label">Kérjük jelentkezzen be rendeléshez</string>
+    <string name="hu_login_username_label">Felhasználónév</string>
+    <string name="hu_login_password_label">Jelszó</string>
+    <string name="service_activity_label">Web service</string>
+    <string name="browser_url">URL</string>
+    <string name="button_browser_label_go">Go to the page</string>
+    <string name="service_endpoint_label">Web service endpoint URL</string>
+    <string name="button_service_label_go">Send request to Web service</string>
+    <string name="service_result_text">Result of request:</string>
+    <string name="namespace_url">http://domain.com/namespace</string>
+    <string name="login_method_name">methodname</string>
+    <string name="login_url">http://domain.com/webservice.asmx?WSDL</string>
+    <string name="login_action">http://domain.com/namespace/methodname</string>
+</resources>

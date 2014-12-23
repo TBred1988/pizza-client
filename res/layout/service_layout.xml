@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView
+        android:id="@+id/textViewServiceUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/service_endpoint_label"
+        android:textSize="@dimen/welcome_page_font_size" />
+    <EditText android:id="@+id/editTextServiceEndpointUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:layout_toRightOf="@+id/textViewServiceUrl"/>
+    <Button android:id="@+id/buttonServiceGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="@string/button_service_label_go"
+        android:layout_below="@+id/editTextServiceEndpointUrl"/>
+    <TextView
+        android:id="@+id/textViewSoapResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/service_result_text"
+        android:textSize="@dimen/welcome_page_font_size" />
+
+</LinearLayout>
