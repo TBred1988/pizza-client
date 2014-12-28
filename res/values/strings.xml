@@ -8,7 +8,9 @@
     <string name="service_label">Web Service</string>
     <string name="hu_welcome_label">Kérjük jelentkezzen be rendeléshez</string>
     <string name="hu_login_username_label">Felhasználónév</string>
+    <string name="hu_logged_in_label">Bejelentkezve</string>
     <string name="hu_login_password_label">Jelszó</string>
+    <string name="hu_button_logout_label">Kilépés</string>
     <string name="service_activity_label">Web service</string>
     <string name="browser_url">URL</string>
     <string name="button_browser_label_go">Go to the page</string>

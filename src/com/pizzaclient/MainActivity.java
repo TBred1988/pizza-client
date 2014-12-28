@@ -1,8 +1,10 @@
 package com.pizzaclient;
 
+import android.content.SharedPreferences;
 import android.widget.TextView;
 import com.pizzaclient.http.IHttpResponseHandler;
 import com.pizzaclient.parser.JsonParser;
+import com.pizzaclient.session.SessionManager;
 import com.pizzaclient.webservice.ServiceCallManager;
 
 import android.os.Bundle;
@@ -19,8 +21,12 @@ import org.json.JSONObject;
 
 public class MainActivity extends Activity implements OnClickListener, IHttpResponseHandler {
 
-	private ServiceCallManager serviceCallManager;
-	
+    private ServiceCallManager serviceCallManager;
+
+    private static SessionManager sessionManager;
+
+    private View onClickView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +48,22 @@ public class MainActivity extends Activity implements OnClickListener, IHttpResp
 	@Override
 	public void onClick(View v) {
 		if(v.getId() == R.id.buttonLogin){
-	        EditText userText = (EditText)findViewById(R.id.editTextUserName);
-			String userName = userText.getText().toString();
-			EditText passwordText = (EditText)findViewById(R.id.editTextPassword);
-			String password = passwordText.getText().toString();
-			serviceCallManager.loginUser(userName, password, this);
+            String userName = getUserName();
+            String password = getPassword();
+            serviceCallManager.loginUser(userName, password, this);
+            this.onClickView = v;
 		}
 	}
+
+    private String getPassword() {
+        EditText passwordText = (EditText)findViewById(R.id.editTextPassword);
+        return passwordText.getText().toString();
+    }
+
+    private String getUserName() {
+        EditText userText = (EditText)findViewById(R.id.editTextUserName);
+        return userText.getText().toString();
+    }
 
     @Override
     public void updateResultPage(HttpResponse response) {
@@ -61,7 +76,12 @@ public class MainActivity extends Activity implements OnClickListener, IHttpResp
                     resultText.setText(jsonObject.getString("message"));
                     int statusCode = jsonObject.getInt("statusCode");
                     if(statusCode == 200){
-                        setContentView(R.layout.gestured_layout);
+                        if(this.onClickView != null){
+                            sessionManager = new SessionManager(this.onClickView.getContext());
+                            sessionManager.login(getUserName(), getPassword());
+                            Intent orderMainActivity = new Intent(this.onClickView.getContext(), OrderMain.class);
+                            this.onClickView.getContext().startActivity(orderMainActivity);
+                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -69,6 +89,10 @@ public class MainActivity extends Activity implements OnClickListener, IHttpResp
             }
 
         }
+    }
+
+    public static SessionManager getSessionManager() {
+        return sessionManager;
     }
 
 }

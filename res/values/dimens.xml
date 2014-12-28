@@ -4,5 +4,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="welcome_page_font_size">18dp</dimen>
+    <dimen name="order_page_logout_font_size">14dp</dimen>
 
 </resources>
