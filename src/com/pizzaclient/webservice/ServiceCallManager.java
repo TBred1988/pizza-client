@@ -41,5 +41,11 @@ public class ServiceCallManager {
         requestCommand.send(url);
 	}
 
+    public void getItems( IHttpResponseHandler responseHandler ){
+        String url = "http://ec2-54-194-198-209.eu-west-1.compute.amazonaws.com:8080/services/rest/items-service/items/list-all";
+        RequestCommand requestCommand = new RequestCommand(responseHandler);
+        requestCommand.send(url);
+    }
+
 
 }

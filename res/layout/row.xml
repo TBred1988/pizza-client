@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="25px"
+              android:id="@+id/textOfItems"
+              android:textSize="18px"
+              android:layout_gravity="center_vertical"
+              >
+    </TextView>
+    <Button
+            android:id="@+id/buttonItem"
+            android:layout_width="wrap_content"
+            android:layout_height="25px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="0px"
+            android:padding="0px"
+            android:text="Order"
+            android:textStyle="bold"
+            android:textSize="18px"/>
+</LinearLayout>

@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/ic_launcher"
+    android:background="@color/black"
     tools:context=".MainActivity" >
     <TextView
         android:id="@+id/textView1"
@@ -15,6 +15,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="@string/hu_welcome_label"
+        android:textColor="@color/white"
         android:textSize="@dimen/welcome_page_font_size" />
 
     <TextView
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hu_login_username_label"
+            android:textColor="@color/white"
             android:textSize="@dimen/welcome_page_font_size" />
     
     <EditText 
@@ -31,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:textColor="@color/white"
         android:layout_marginTop="-10dp"/>
 
     <TextView
@@ -39,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hu_login_password_label"
+            android:textColor="@color/white"
             android:textSize="@dimen/welcome_page_font_size" />
 
     <EditText 
@@ -47,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         android:layout_marginTop="-10dp"/>
     
     <Button
@@ -56,6 +61,7 @@
         android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
+        android:textColor="@color/white"
         android:text="@string/button_login_label"/>
     <TextView
             android:id="@+id/textLoginResult"
@@ -63,5 +69,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:textColor="@color/white"
             android:textSize="@dimen/welcome_page_font_size" />
 </RelativeLayout>
