@@ -1,6 +1,5 @@
 package com.pizzaclient.http;
 
-import android.app.Activity;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import org.apache.http.HttpResponse;
@@ -24,7 +23,6 @@ public class NetworkTask extends AsyncTask<String, Void, HttpResponse> {
         try {
             return client.execute(request);
         } catch (IOException e) {
-            //e.printStackTrace();
             return null;
         } finally {
             client.close();
@@ -34,8 +32,5 @@ public class NetworkTask extends AsyncTask<String, Void, HttpResponse> {
     @Override
     protected void onPostExecute(HttpResponse result) {
         parentCommand.handleHttpResponse(result);
-        //Do something with result
-        //    if (result != null)
-        //      result.getEntity().writeTo(new FileOutputStream(f));
     }
 }

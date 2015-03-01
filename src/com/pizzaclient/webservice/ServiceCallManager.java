@@ -47,5 +47,4 @@ public class ServiceCallManager {
         requestCommand.send(url);
     }
 
-
 }

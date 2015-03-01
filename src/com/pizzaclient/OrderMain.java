@@ -8,17 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.pizzaclient.R;
 import com.pizzaclient.http.IHttpResponseHandler;
 import com.pizzaclient.parser.JsonParser;
-import com.pizzaclient.session.SessionManager;
 import com.pizzaclient.webservice.ServiceCallManager;
 import org.apache.http.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.List;
 
 /**
  * Created by Tibor Kovacs on 2014.12.28..
@@ -65,12 +61,16 @@ public class OrderMain extends Activity implements View.OnClickListener, IHttpRe
             JSONObject jsonObject = jsonParser.getJSONFromResponse(response);
             if(jsonObject !=  null){
                 try {
-                    handleItemsResponse(jsonObject);
+                    updateByResponse(jsonObject);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         }
+    }
+
+    private void updateByResponse(JSONObject jsonObject)throws JSONException{
+        handleItemsResponse(jsonObject);
     }
 
     private void handleItemsResponse(JSONObject jsonObject) throws JSONException {
@@ -81,10 +81,9 @@ public class OrderMain extends Activity implements View.OnClickListener, IHttpRe
             for(int i=0; i<items.length(); i++)
             {
                 JSONObject actItem = items.getJSONObject(i);
-                orderItems[i] = actItem.getString("shortName");
+                orderItems[i] = actItem.getString("shortName") + "," + actItem.getString("priceHu");
             }
 
-            //adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.row, orderItems);
             adapter = new CustomArrayAdapter(getApplicationContext(), R.layout.row, orderItems);
         }else{
             orderItems = new String[1];
@@ -110,7 +109,13 @@ public class OrderMain extends Activity implements View.OnClickListener, IHttpRe
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View rowView = inflater.inflate(R.layout.row, parent, false);
             TextView textView = (TextView) rowView.findViewById(R.id.textOfItems);
-            textView.setText(getItem(position));
+            TextView priceView = (TextView) rowView.findViewById(R.id.priceOfItems);
+            String item = getItem(position);
+            String[] values = item.split(",");
+            String name = values[0];
+            String price = "ár: " + values[1];
+            textView.setText(name);
+            priceView.setText(price);
             return rowView;
         }
 
