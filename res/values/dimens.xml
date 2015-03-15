@@ -8,8 +8,11 @@
     <dimen name="order_page_login_label_width">150dp</dimen>
     <dimen name="order_page_login_label_height">60dp</dimen>
     <dimen name="order_page_logout_label_width">100dp</dimen>
+    <dimen name="order_page_bucket_label_width">80dp</dimen>
     <dimen name="order_page_logout_label_height">40dp</dimen>
+    <dimen name="order_page_bucket_label_height">40dp</dimen>
     <dimen name="order_page_logout_font_size">17dp</dimen>
+    <dimen name="order_page_bucket_font_size">17dp</dimen>
     <dimen name="order_page_items_font_size">18dp</dimen>
     <dimen name="order_page_items_row_height">40dp</dimen>
     <dimen name="order_page_items_name_margin">1dp</dimen>

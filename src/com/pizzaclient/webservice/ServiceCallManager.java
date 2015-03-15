@@ -2,6 +2,8 @@ package com.pizzaclient.webservice;
 
 import java.io.IOException;
 
+import android.util.Log;
+import com.pizzaclient.MainActivity;
 import com.pizzaclient.http.IHttpResponseHandler;
 import com.pizzaclient.http.RequestCommand;
 import org.apache.http.HttpResponse;
@@ -36,12 +38,14 @@ public class ServiceCallManager {
 	}
 	
 	public void loginUser(String userName, String password, IHttpResponseHandler responseHandler){
-		String url = "http://ec2-54-194-198-209.eu-west-1.compute.amazonaws.com:8080/services/rest/user-service/users/login/" + userName + "/" + password;
+        Log.i("OrderMain", "Sending log request to the server");
+        String url = "http://ec2-54-194-198-209.eu-west-1.compute.amazonaws.com:8080/services/rest/user-service/users/login/" + userName + "/" + password;
         RequestCommand requestCommand = new RequestCommand(responseHandler);
         requestCommand.send(url);
 	}
 
     public void getItems( IHttpResponseHandler responseHandler ){
+        Log.i("OrderMain","Sending items retrieving request");
         String url = "http://ec2-54-194-198-209.eu-west-1.compute.amazonaws.com:8080/services/rest/items-service/items/list-all";
         RequestCommand requestCommand = new RequestCommand(responseHandler);
         requestCommand.send(url);

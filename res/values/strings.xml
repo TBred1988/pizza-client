@@ -11,6 +11,8 @@
     <string name="hu_logged_in_label">Bejelentkezve</string>
     <string name="hu_login_password_label">Jelszó</string>
     <string name="hu_button_logout_label">Kilépés</string>
+    <string name="hu_button_bucket_label">Kosár</string>
+    <string name="hu_button_back_from_bucket_label">Vissza</string>
     <string name="hu_order_button_label">Kosárba</string>
     <string name="service_activity_label">Web service</string>
     <string name="browser_url">URL</string>

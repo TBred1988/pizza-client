@@ -2,9 +2,9 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="fill_parent"
           android:id="@+id/mainGridView"
-          android:columnCount="2"
+          android:columnCount="3"
           android:verticalSpacing="10dp"
           android:horizontalSpacing="10dp"
           android:stretchMode="columnWidth"
@@ -25,17 +25,38 @@
                 android:textColor="@color/white"
                 />
         <Button
+                android:layout_width="@dimen/order_page_bucket_label_width"
+                android:layout_height="@dimen/order_page_bucket_label_height"
+                android:textSize="@dimen/order_page_bucket_font_size"
+                android:text="@string/hu_button_bucket_label"
+                android:textColor="@color/white"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:id="@+id/buttonBucket"/>
+
+        <Button
                 android:layout_width="@dimen/order_page_logout_label_width"
                 android:layout_height="@dimen/order_page_logout_label_height"
                 android:textSize="@dimen/order_page_logout_font_size"
                 android:text="@string/hu_button_logout_label"
                 android:textColor="@color/white"
-                android:layout_column="1"
+                android:layout_column="2"
                 android:layout_row="0"
                 android:id="@+id/buttonLogout"/>
+
     </LinearLayout>
 
     <ListView android:id="@+id/items"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_column="0"
+              android:textSize="@dimen/order_page_items_font_size"
+              android:background="@color/cinnamon"
+              android:textColor="@color/white"
+              android:layout_row="1">
+    </ListView>
+
+    <ListView android:id="@+id/bucketItems"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_column="0"
